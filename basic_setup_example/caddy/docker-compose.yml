@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  caddy:
+    image: # custom build with RFC2136
+    volumes:
+      - ./Caddyfile:/caddy/Caddyfile    # to mount custom Caddyfile
+      - ./conf:/root/.caddy           # to save certificates on disk
+    ports:
+      - "80:80"
+      - "443:443"
+    network_mode: "host"
+    environment:
+      - "RFC2136_NAMESERVER=ns.aws.heman.io"
+      - "RFC2136_TSIG_ALGORITHM=hmac-md5.sig-alg.reg.int."
+      - "RFC2136_TSIG_KEY=gw.heman.io."
+      - "RFC2136_TSIG_SECRET=<SECRET>"
+

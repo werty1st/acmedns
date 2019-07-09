@@ -1,0 +1,15 @@
+$TTL    300
+gw.heman.io.       IN      SOA     ns.aws.heman.io. admin.wrty.eu. (
+                   2007010401           ; Serial
+                         300           ; Refresh [1h]
+                         300           ; Retry   [10m]
+                         300           ; Expire  [1d]
+                         300 )         ; Negative Cache TTL [1h]
+;
+@        IN      NS      ns.aws.heman.io.
+@		 IN		 A		 34.251.78.93
+
+*		 IN		 A		 34.251.78.93
+
+www1     IN      A       192.168.0.1
+

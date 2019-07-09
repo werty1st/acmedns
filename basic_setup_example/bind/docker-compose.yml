@@ -1,0 +1,13 @@
+version: '2'
+services:
+  bind9:
+    restart: always
+    image: resystit/bind9:latest
+    ports:
+      - "53:53"
+      - "53:53/udp"
+    volumes:
+      - ./conf/:/etc/bind/
+      - ./conf/gw.heman.io.db:/etc/bind/gw.heman.io.db
+    environment:
+      - "TZ=Europe/Brussels"

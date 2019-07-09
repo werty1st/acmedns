@@ -1,0 +1,16 @@
+
+*.gw.heman.io {
+    tls {
+        #comment out after testing
+    	ca https://acme-staging-v02.api.letsencrypt.org/directory
+       	dns rfc2136
+    }
+    proxy / https://127.0.0.1:16443 {
+        websocket
+        transparent
+        insecure_skip_verify
+    }
+}
+
+
+
